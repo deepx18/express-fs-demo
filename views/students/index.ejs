@@ -1,0 +1,92 @@
+<html>
+<head>
+    <style>
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            font-family: Arial;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f2f2f2;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            /* shadow تحت الزر */
+            transition: all 0.2s ease;
+        }
+
+        .delete {
+            background: #e74c3c;
+        }
+
+        .edit {
+            background: #27ae60;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn" style="background: #3498db; margin-bottom: 20px;"><a href="/create" style="color: white; text-decoration: none;">Add student</a></button>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Field</th>
+            <th>Action</th>
+        </tr>
+
+        <% students.forEach(data => { %>
+            <tr>
+                <td><%= data.name %></td>
+                <td><%= data.city %></td>
+                <td><%= data.email %></td>
+                <td><%= data.field %></td>
+                <td>
+                    <div style="display:flex; gap:8px; justify-content:center;">
+    
+                        <form action="/edit/<%= data._id %>" method="GET">
+                            <button class="btn edit">Modifier</button>
+                        </form>
+    
+                        <form action="/supprimer/<%= data._id %>?_method=DELETE" method="POST">
+                            <button class="btn delete">Supprimer</button>
+                        </form>
+    
+                    </div>
+                </td>
+    
+            </tr>
+            
+        <% }); %>
+
+
+
+    </table>
+</body>
+
+</html>

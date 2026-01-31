@@ -1,0 +1,23 @@
+{
+  "name": "formmongodb",
+  "version": "1.0.0",
+  "description": "connect mongodb with express",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "code with arjum",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^9.1.5"
+  },
+  "devDependencies": {
+    "express-list-endpoints": "^7.1.1",
+    "nodemon": "^3.1.11"
+  }
+}
