@@ -3,7 +3,6 @@ import { resolve } from "path";
 import "./database/config.js";
 import router from "./routes/students.js";
 import methodOverride from "method-override";
-import expressListEndpoints from "express-list-endpoints";
 
 const app = express()
 

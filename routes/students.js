@@ -1,4 +1,3 @@
-import expressListEndpoints from "express-list-endpoints";
 import studentmodel from "../database/config.js";
 import express from "express";
 
@@ -89,7 +88,6 @@ router.get("/edit/:id", async (req, res) => {
   res.render('students/edit', { student: studentOne });
 }); 
 
-console.log(expressListEndpoints(router))
 
 
 export default router;
